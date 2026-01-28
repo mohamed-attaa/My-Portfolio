@@ -76,8 +76,6 @@ body::after {
   padding: 60px 0;
 }
 
-
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -136,7 +134,7 @@ body::after {
 }
 
 .nav-link {
-  color: #888888; /* grey color for non-hover state */
+  color: #888888;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -170,7 +168,7 @@ body::after {
 }
 
 .social-icon {
-  color: #888888; /* grey color for non-hover state */
+  color: #888888;
   transition: all 0.3s ease;
   padding: 8px;
   border-radius: 50%;
@@ -301,8 +299,8 @@ body::after {
 
 /* Matahari (Sun) - Elemento visual */
 .sun-core {
-  width: 240px; /* 40% larger than 120px */
-  height: 330px; /* 40% larger than 120px */
+  width: 240px;
+  height: 330px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -337,7 +335,7 @@ body::after {
   top: 50%;
   left: 50%;
   width: 48px;
-  height: 48px
+  height: 48px;
   border-radius: 50%;
   font-size: 10px;
   font-weight: bold;
@@ -376,9 +374,6 @@ body::after {
       inset 0 0 40px rgba(255, 215, 0, 0.6);
   }
 }
-
-
-
 
 @keyframes slideInLeft {
   from {
@@ -420,20 +415,6 @@ body::after {
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .glow-genz-button {
   background: transparent;
@@ -489,6 +470,48 @@ body::after {
   }
 }
 
+/* تحسينات الصور والعناصر العامة */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* تحسينات النصوص */
+h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ==== Media Queries للتصميم المتجاوب ==== */
+
+/* شاشات كبيرة جداً */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .hero-content {
+    gap: 100px;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .avatar-container {
+    width: 550px;
+    height: 550px;
+  }
+  
+  .sun-core {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* أجهزة اللاب توب والأجهزة المتوسطة */
 @media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -503,23 +526,33 @@ body::after {
   .hero-title {
     font-size: 3rem;
   }
+  
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
 
-
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* أجهزة اللوحية */
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
     top: 70px;
     left: 0;
     width: 100%;
-    background: rgba(6, 21, 38, 0.95);
+    background: rgba(87, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     flex-direction: column;
     padding: 20px;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    border-bottom: 1px solid rgba(56, 182, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 56, 56, 0.1);
   }
 
   .nav-menu.active {
@@ -557,67 +590,29 @@ body::after {
   }
 
   .sun-core {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .about-content,
+  .contact-content {
+    gap: 40px;
   }
 
-
-
-  .earth-container {
-    width: 30px;
-    height: 30px;
-    top: -15px;
+  .projects-grid {
+    gap: 30px;
   }
 
-  .orbit-icon.html {
-    width: 20px;
-    height: 20px;
+  .project-content {
+    padding: 20px;
   }
 
-  .orbit-icon.css {
-    width: 12px;
-    height: 12px;
+  .contact-form {
+    padding: 25px;
   }
-
-  .orbit-icon.js {
-    width: 16px;
-    height: 16px;
-  }
-
-  .orbit-icon.react {
-    width: 18px;
-    height: 18px;
-  }
-
-  .orbit-icon.nodejs {
-    width: 20px;
-    height: 20px;
-  }
-
-  .orbit-icon.python {
-    width: 22px;
-    height: 22px;
-  }
-
-  .orbit-icon.git {
-    width: 24px;
-    height: 24px;
-  }
-
-  .moon-orbit {
-    width: 60px;
-    height: 60px;
-  }
-
-  .orbit-icon.moon {
-    width: 9px;
-    height: 9px;
-    top: -4.5px;
-  }
-
-
 }
 
+/* الهواتف الذكية الكبيرة */
 @media (max-width: 640px) {
   .container {
     padding: 0 15px;
@@ -648,75 +643,173 @@ body::after {
   }
 
   .avatar-container {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
 
   .sun-core {
-    width: 60px;
-    height: 60px;
-  }
-
-
-
-  .earth-container {
-    width: 24px;
-    height: 24px;
-    top: -12px;
-  }
-
-  .orbit-icon.html {
-    width: 16px;
-    height: 16px;
-  }
-
-  .orbit-icon.css {
-    width: 10px;
-    height: 10px;
-  }
-
-  .orbit-icon.js {
-    width: 12px;
-    height: 12px;
-  }
-
-  .orbit-icon.react {
-    width: 14px;
-    height: 14px;
-  }
-
-  .orbit-icon.nodejs {
-    width: 16px;
-    height: 16px;
-  }
-
-  .orbit-icon.python {
-    width: 18px;
-    height: 18px;
-  }
-
-  .orbit-icon.git {
-    width: 20px;
-    height: 20px;
-  }
-
-  .moon-orbit {
-    width: 40px;
-    height: 40px;
-  }
-
-  .orbit-icon.moon {
-    width: 7px;
-    height: 7px;
-    top: -3.5px;
+    width: 180px;
+    height: 180px;
   }
 
   .nav-container {
     padding: 12px 15px;
   }
+  
+  .about-content,
+  .contact-content {
+    gap: 30px;
+  }
 
+  .skills-grid {
+    justify-content: center;
+  }
 
+  .project-links {
+    flex-direction: column;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+  
+  .hero-buttons .glow-genz-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
 }
+
+/* الهواتف الذكية الصغيرة */
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 0 40px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .greeting {
+    font-size: 0.9rem;
+  }
+  
+  .hero-quote {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+  
+  .avatar-container {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+  
+  .sun-core {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  
+  .hero-buttons .glow-genz-button {
+    padding: 10px 24px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .hero-social {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-container {
+    padding: 10px 15px;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .about-content, 
+  .contact-content, 
+  .hero-content {
+    text-align: center;
+  }
+  
+  .about-text p {
+    text-align: justify;
+  }
+  
+  .skills-grid {
+    justify-content: center;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+  
+  .project-content {
+    padding: 15px;
+  }
+}
+
+/* الهواتف الصغيرة جداً */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .avatar-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .sun-core {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .greeting {
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .glow-genz-button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ==== باقي الأنماط ==== */
 
 .about-content {
   display: grid;
@@ -971,54 +1064,4 @@ body::after {
   transform: translateY(30px);
   opacity: 0;
   transition: all 1.5s ease;
-}
-
-@media (max-width: 1024px) {
-  .about-content,
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-content,
-  .contact-content {
-    gap: 40px;
-  }
-
-  .projects-grid {
-    gap: 30px;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-}
-
-@media (max-width: 640px) {
-  .about-content,
-  .contact-content {
-    gap: 30px;
-  }
-
-  .skills-grid {
-    justify-content: center;
-  }
-
-  .project-links {
-    flex-direction: column;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
 }
